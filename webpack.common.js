@@ -1,4 +1,5 @@
 const path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -17,22 +18,10 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.(css|scss)$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-      },
-      {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
         type: 'asset/resource',
       },
-      // {
-      //   test: /\.(png|jpg|jpeg|gif|svg)$/i,
-      //   type: "asset",
-      //   parser: {
-      //     dataUrlCondition: {
-      //       maxSize: 100 * 1024,
-      //     },
-      //   },
-      // },
     ],
   },
+  plugins: [new CleanWebpackPlugin()],
 };
