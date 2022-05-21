@@ -4,6 +4,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = merge(common, {
   mode: 'production',
@@ -31,6 +32,7 @@ module.exports = merge(common, {
       new CssMinimizerPlugin({
         parallel: os.cpus().length - 1,
       }),
+      new TerserPlugin(),
     ],
   },
 });
