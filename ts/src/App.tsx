@@ -5,11 +5,9 @@ import MainPage from './pages/MainPage';
 export default function App() {
   return (
     <BrowserRouter>
-      <div>
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+      </Routes>
     </BrowserRouter>
   );
 }
